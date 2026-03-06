@@ -276,6 +276,30 @@ section{padding:5rem 6%}
   font-size:4rem;opacity:.15;
 }
 
+/* WIP PROJECT */
+.project-wip{border:1px solid var(--accent) !important;position:relative;overflow:hidden}
+.project-wip::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--green),var(--accent));
+  background-size:200% 100%;
+  animation:shimmer 3s linear infinite;
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.wip-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:.2rem .7rem;border-radius:20px;
+  background:rgba(110,200,122,0.1);border:1px solid rgba(110,200,122,0.3);
+  font-size:.65rem;color:var(--green);letter-spacing:0;text-transform:none;
+}
+.wip-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.wip-status{margin-top:.5rem}
+.wip-bar{width:100%;height:4px;background:var(--bg-tertiary);border-radius:2px;overflow:hidden}
+.wip-fill{width:60%;height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--green));animation:progress 2s ease infinite alternate}
+@keyframes progress{0%{width:45%}100%{width:65%}}
+.wip-text{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text-muted);margin-top:.4rem;display:block}
+.wip-visual{display:flex;align-items:center;justify-content:center;height:100%}
+
 /* CERTIFICATIONS */
 .certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .cert-card{
@@ -466,7 +490,7 @@ footer{
         Nada<br><span class="highlight">Aglan</span>
       </h1>
       <p class="hero-role">
-        Associate Digital Transformation Engineer building scalable data pipelines and real-time analytics platforms. Passionate about solving complex data challenges that drive business decisions.
+        Associate Digital Transformation Engineer at Linxon — building data solutions that bridge the gap between C-suite strategy and production-grade engineering. Currently designing a real-time air quality monitoring platform on Azure.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
@@ -496,8 +520,8 @@ footer{
         <span class="t-cmd">cat</span>
         <span class="t-flag"> current_work.txt</span>
       </div>
-      <span class="t-output" style="color:var(--accent-light)">→ Building a Real-Time Weather Analytics Platform</span>
-      <span class="t-output t-comment"># Processing live weather streams with Kafka + Spark</span>
+      <span class="t-output" style="color:var(--accent-light)">→ Building a Real-Time Global Air Quality Monitoring & Alerting Platform</span>
+      <span class="t-output t-comment"># IoT sensor data → Event Hubs → Databricks → Alerts pipeline on Azure</span>
       <br>
       <div class="terminal-line">
         <span class="t-prompt">nada@data-eng:~$ </span>
@@ -526,22 +550,22 @@ footer{
     </div>
     <div class="about-grid">
       <div class="about-text fade-in">
-        <p>I am a results-driven Data Engineer with expertise in designing and optimizing data pipelines, ETL processes, and data warehousing solutions. With a strong background in Python, SQL, and Apache Airflow, I bring hands-on experience working with cloud platforms like Azure.</p>
-        <p>Currently working as an Associate Digital Transformation Engineer since May 2025, I'm building a real-time weather analytics platform that processes live data streams. I thrive on solving complex data challenges to drive business insights and innovation.</p>
-        <p>My approach combines solid engineering fundamentals with modern cloud-native tools to build pipelines that are not only functional but resilient, scalable, and maintainable.</p>
+        <p>I'm a Data Engineer who speaks both <strong style="color:var(--accent)">data</strong> and <strong style="color:var(--accent)">business</strong>. At Linxon, I work shoulder-to-shoulder with C-level executives — not just building pipelines, but translating strategic goals into data solutions that actually move the needle. From unifying scattered data sources into single-pane dashboards to automating processes that used to take days, I bridge the gap between what the business needs and what the data can deliver.</p>
+        <p>My toolkit spans the full Microsoft ecosystem — Power BI, Power Apps, Power Automate, Azure Data Factory, Synapse — combined with open-source heavy hitters like Spark, Kafka, and Airflow. Whether it's a batch warehouse or a real-time streaming pipeline, I design systems that are production-grade from day one: observable, scalable, and built with Infrastructure as Code.</p>
+        <p>Right now, I'm building something I'm especially proud of: a <strong style="color:var(--accent)">real-time global air quality monitoring platform</strong> on Azure — ingesting IoT sensor data from thousands of stations worldwide, running anomaly detection in Databricks, and triggering automated alerts when pollution crosses WHO thresholds. It's the kind of project that shows what data engineering looks like when it has a purpose beyond just moving bytes.</p>
       </div>
       <div class="about-stats fade-in fade-in-delay-1">
         <div class="stat-card">
-          <div class="stat-number">3+</div>
-          <div class="stat-label">End-to-End Projects</div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Azure Services Hands-On</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">2</div>
-          <div class="stat-label">Certifications</div>
+          <div class="stat-label">Industry Certifications</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">8+</div>
-          <div class="stat-label">Technologies</div>
+          <div class="stat-number">3</div>
+          <div class="stat-label">Intensive Training Programs</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">∞</div>
@@ -633,7 +657,6 @@ footer{
             <div class="exp-detail-item">Leveraging the full Microsoft Power Platform — Power BI, Power Apps, and Power Automate — to build dashboards, custom applications, and automated workflows</div>
             <div class="exp-detail-item">Leading multiple data integration projects, consolidating data from diverse sources into unified dashboards and orchestrating end-to-end data movement pipelines</div>
             <div class="exp-detail-item">Acting as the Single Point of Contact (SPOC) for departments, translating business goals into descriptive modeling solutions</div>
-            <div class="exp-detail-item">Building a real-time weather analytics platform that processes live weather data streams for actionable operational insights</div>
           </div>
           <div class="exp-tech-tags">
             <span>Power BI</span><span>Power Apps</span><span>Power Automate</span><span>Python</span><span>SQL</span><span>Azure</span><span>Data Integration</span>
@@ -652,6 +675,68 @@ footer{
       <h2 class="section-title">Featured Work</h2>
     </div>
     <div class="projects-grid">
+
+      <!-- Project 0 - In Progress -->
+      <div class="project-card fade-in project-wip">
+        <div class="project-info">
+          <div class="project-num" style="display:flex;align-items:center;gap:.75rem">
+            <span>CURRENTLY BUILDING</span>
+            <span class="wip-badge"><span class="wip-dot"></span>In Progress</span>
+          </div>
+          <h3 class="project-title">Real-Time Global Air Quality Monitoring & Alerting Platform</h3>
+          <p class="project-desc">Building the data backbone for an environmental monitoring platform — ingesting sensor readings from thousands of air quality stations worldwide via OpenAQ API, detecting anomalies, correlating pollution with weather patterns, and triggering automated alerts when conditions exceed WHO thresholds. A true streaming + batch hybrid architecture with a real alerting use case, not just dashboards.</p>
+          <div class="project-tech">
+            <span>Azure Functions</span><span>Event Hubs</span><span>Data Factory</span>
+            <span>ADLS Gen2</span><span>Databricks</span><span>Azure SQL</span>
+            <span>Logic Apps</span><span>Key Vault</span><span>Monitor</span><span>Terraform</span>
+          </div>
+          <div class="wip-status">
+            <div class="wip-bar"><div class="wip-fill"></div></div>
+            <span class="wip-text">Building & iterating...</span>
+          </div>
+        </div>
+        <div class="project-visual" style="position:relative">
+          <div class="wip-visual">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" style="opacity:.75">
+              <!-- Sensors -->
+              <circle cx="40" cy="30" r="6" stroke="#6ec87a" stroke-width="1" fill="none"><animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/></circle>
+              <circle cx="40" cy="30" r="2" fill="#6ec87a"/>
+              <circle cx="160" cy="25" r="6" stroke="#6ec87a" stroke-width="1" fill="none"><animate attributeName="r" values="4;8;4" dur="2s" begin=".6s" repeatCount="indefinite"/></circle>
+              <circle cx="160" cy="25" r="2" fill="#6ec87a"/>
+              <circle cx="100" cy="15" r="6" stroke="#6ec87a" stroke-width="1" fill="none"><animate attributeName="r" values="4;8;4" dur="2s" begin="1.2s" repeatCount="indefinite"/></circle>
+              <circle cx="100" cy="15" r="2" fill="#6ec87a"/>
+              <text x="100" y="8" text-anchor="middle" fill="#5e5a54" font-size="6" font-family="monospace">IoT SENSORS</text>
+              <!-- Flow lines to Event Hub -->
+              <line x1="40" y1="36" x2="80" y2="60" stroke="#c8a46e" stroke-width="1" stroke-dasharray="3 2"><animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" repeatCount="indefinite"/></line>
+              <line x1="160" y1="31" x2="120" y2="60" stroke="#c8a46e" stroke-width="1" stroke-dasharray="3 2"><animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" begin=".3s" repeatCount="indefinite"/></line>
+              <line x1="100" y1="21" x2="100" y2="56" stroke="#c8a46e" stroke-width="1" stroke-dasharray="3 2"><animate attributeName="stroke-dashoffset" values="20;0" dur="1.5s" begin=".6s" repeatCount="indefinite"/></line>
+              <!-- Event Hubs -->
+              <rect x="72" y="56" width="56" height="22" rx="4" stroke="#c8a46e" stroke-width="1.5" fill="none"/>
+              <text x="100" y="71" text-anchor="middle" fill="#c8a46e" font-size="7" font-family="monospace">EVENT HUBS</text>
+              <!-- Arrow down -->
+              <line x1="100" y1="78" x2="100" y2="96" stroke="#c8a46e" stroke-width="1.5"/>
+              <polygon points="96,93 100,100 104,93" fill="#c8a46e"/>
+              <!-- Databricks -->
+              <rect x="65" y="100" width="70" height="22" rx="4" stroke="#c8a46e" stroke-width="1.5" fill="none"/>
+              <text x="100" y="115" text-anchor="middle" fill="#c8a46e" font-size="7" font-family="monospace">DATABRICKS</text>
+              <!-- Split to two outputs -->
+              <line x1="85" y1="122" x2="55" y2="145" stroke="#c8a46e" stroke-width="1"/>
+              <line x1="115" y1="122" x2="145" y2="145" stroke="#c8a46e" stroke-width="1"/>
+              <!-- Azure SQL -->
+              <rect x="28" y="145" width="54" height="20" rx="4" stroke="#6eaec8" stroke-width="1.5" fill="none"/>
+              <text x="55" y="159" text-anchor="middle" fill="#6eaec8" font-size="7" font-family="monospace">AZURE SQL</text>
+              <!-- Logic Apps Alerts -->
+              <rect x="118" y="145" width="54" height="20" rx="4" stroke="#c86e6e" stroke-width="1.5" fill="none"/>
+              <text x="145" y="159" text-anchor="middle" fill="#c86e6e" font-size="7" font-family="monospace">ALERTS</text>
+              <!-- Alert pulse -->
+              <circle cx="175" cy="155" r="4" fill="#c86e6e" opacity=".6"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></circle>
+              <!-- Bottom labels -->
+              <text x="55" y="178" text-anchor="middle" fill="#5e5a54" font-size="6" font-family="monospace">BI DASHBOARDS</text>
+              <text x="145" y="178" text-anchor="middle" fill="#5e5a54" font-size="6" font-family="monospace">WHO THRESHOLD</text>
+            </svg>
+          </div>
+        </div>
+      </div>
 
       <!-- Project 1 -->
       <div class="project-card fade-in">
